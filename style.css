@@ -1,12 +1,62 @@
+/*from tuto*/
+#video {
+  border: 1px solid black;
+  box-shadow: 2px 2px 3px black;
+  width:320px;
+  height:240px;
+}
+
+#photo {
+  border: 1px solid black;
+  box-shadow: 2px 2px 3px black;
+  height:140px;
+}
+
+#canvas {
+  display:none;
+}
+
+.camera {
+  width: 340px;
+  display:inline-block;
+}
+
+.output {
+  height: 140px;
+  display:inline-block;
+}
+
+#startbutton {
+  display:block;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  bottom:32px;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  font-family: "Lucida Grande", "Arial", sans-serif;
+  color: rgba(255, 255, 255, 1.0);
+}
+
+.contentarea {
+  font-size: 16px;
+  font-family: "Lucida Grande", "Arial", sans-serif;
+  width: 760px;
+}
+
+/*From me*/
+
 footer {
-	position: fixed;
+  position: fixed;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	padding: 40px 30px;
+	padding: 25px 30px;
 	text-align: right;
-	background-color: #222222;
-	color: #AAAAAA;
+	background-color: black;
+  color: white;
 	font-size: 13px;
 	font-style: italic;
 }
@@ -23,5 +73,6 @@ nav {
 
 .container {
 	margin-top: 100px;
-	padding: 25px 35px;
+  text-align: center;
+
 }
