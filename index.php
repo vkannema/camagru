@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,22 +12,29 @@
 </head>
 <body>
 	<nav>
-		Camagru
+	
+		<a href="index.php" class="align-left">Camagru</a>
+		<ul class="align-right">
+			<?php 
+				if (isset($_SESSION['loggued_on_user'])) {
+			?>
+			<li><a href="my_acc.php">My account</a></li>
+			<?php 
+				if ($_SESSION['admin'] !== "0") {
+			?>
+			<li><a href="admin/index.php">Admin</a></li>
+			<?php } ?>
+			<li><a href="logout.php">Logout</a></li>
+			<?php 
+			} else {
+			 ?>
+			<li><a href="login.php">Login</a></li>
+			<?php } ?>
+		</ul>
+
 	</nav>
 	<div class="container">
-	<?php>
-		print_r($_SESSION);
-	<?>
-		<div class="camera">
-			<video id="video">Video stream not available</video>
-			<canvas id="canvas">
-  			</canvas>
-				
-		</div>
-	<button id="startbutton">Take photo</button>
-	<div class="output">
-    				<img id="photo" alt="The screen capture will appear in this box."> 
-  		</div>
+		This are the pictures from the community.
 	</div>
 	
 	<footer>
