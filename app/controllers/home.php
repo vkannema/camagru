@@ -1,13 +1,11 @@
 <?php
 
-class Home extends Controller
+namespace App\Controllers;
+
+class Home extends \Core\Controller
 {
-	public function index($name = '')
+	public function index()
 	{
-		$user = $this->model('User');
-		$user->name = $name;
-
-		$this->view('home/index', ['name' => $user->name]);
+		echo 'Hello from the index action in the Home controller !';
 	}
-
 }

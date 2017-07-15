@@ -1,14 +1,35 @@
 <?php
 
-class Controller {
+namespace Core;
 
-	public function model($model) {
-		require_once '../app/models/' . $model . '.php';
-		return new $model();
+abstract class Controller
+{
+	public function __call($name, $args)
+	{
+		$method = $name . 'Action';
+		if (method_exists($this, $method)) {
+			if ($this->before() !== false) {
+				call_user_func_array([$this, $method], $args);
+				$this->after();
+			} else {
+				echo "Method $method not found in controller ". get_class($this);
+			}
+		}
+	}
+	protected function before ()
+	{
+
 	}
 
-	public function view($view, $data = [])
+	protected function after ()
 	{
-		require_once '../app/views/' . $view . '.php';
+		
+	}
+
+	protected $route_params = [];
+
+	public function __construct($route_params)
+	{
+		$this->route_params = $route_params;
 	}
 }
