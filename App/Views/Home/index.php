@@ -5,15 +5,10 @@
 	<title>Home</title>
 </head>
 <body>
-	<h1>Welcome <?php echo htmlspecialchars($name)?></h1>
-
-	<ul>
-		<?php foreach ($colours as $colour) : ?>
-			<li>
-				<?php echo htmlspecialchars($colour); ?>
-			</li>
-		<?php endforeach; ?>
-	</ul>
+	<h1>Welcome</h1>
+	<?php
+		echo $db;
+	?>
 
 </body>
 </html>

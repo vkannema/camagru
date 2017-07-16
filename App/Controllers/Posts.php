@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use \Core\View;
+
 /**
  * Posts controller
  *
@@ -9,11 +11,9 @@ namespace App\Controllers;
  */
 class Posts extends \Core\Controller
 {
-
-
 	public function indexAction()
 	{
-		echo 'Hello from the index action in the Posts controller!';
+
 	}
 
 	public function addNewAction()

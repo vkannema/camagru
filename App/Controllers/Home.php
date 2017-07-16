@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use \Core\View;
+use App\Models\Setup;
 
 class Home extends \Core\Controller
 {
@@ -19,7 +20,8 @@ class Home extends \Core\Controller
 
 	public function indexAction()
 	{
+		$db = Setup::createdb();
 		//echo 'Hello from the index action in the Home controller!';
-		View::render('Home/index.php', ['name' => 'Dave', 'colours' =>['red', 'green', 'orange']]);
+		View::render('Home/index.php', ['db' => $db]);
 	}
 }
