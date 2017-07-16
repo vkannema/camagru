@@ -5,25 +5,15 @@
 	<title>Home</title>
 </head>
 <body>
-	<h1>Welcome</h1>
-	<p>
-		Hello from the view!
-	</p>
+	<h1>Welcome <?php echo htmlspecialchars($name)?></h1>
 
-	<h1>Output escaping</h1>
-	<?php
-		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-			echo "Hello; " . htmlspecialchars($_POST['name']);
-		}
-	?>
-	<form method="post">
-		<div>
-			<label for="name">Your name</label>
-			<input id="name" name="name" autofocus />
-		</div>
-		<div>
-			<button type="submit">Submit</button>
-		</div>
-	</form>
+	<ul>
+		<?php foreach ($colours as $colour) : ?>
+			<li>
+				<?php echo htmlspecialchars($colour); ?>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+
 </body>
 </html>
