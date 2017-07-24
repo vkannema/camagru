@@ -12,16 +12,5 @@ class Setup extends \Core\Model
 		// $dbname = 'mvc';
 		// $username = 'root';
 		// $password = 'root';
-		try {
-			// $db = new PDO('mysql:host=localhost', $username, $password);
-			$db = static::getDB();
-			$sql = "CREATE DATABASE IF NOT EXISTS mvc";
-			$db->exec($sql);
-			return ("Database created, well done !");
-
-		}
-		catch (PDOException $e) {
-			echo $e->getMessage();
-		}
 	}
 }
