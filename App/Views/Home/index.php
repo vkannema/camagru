@@ -6,9 +6,8 @@
 </head>
 <body>
 	<h1>Welcome</h1>
-	<?php
-		echo "coucou";
-	?>
+	<a href="/signup/new">Sign Up GROS</a>
+	<a href="/login">Log in GROS</a>
 
 </body>
 </html>

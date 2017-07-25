@@ -86,16 +86,6 @@ class Router
 
 	public function match($url)
 	{
-		// foreach ($this->routes as $route => $params)
-		// {
-		// 	if ($url == $route)
-		// 	{
-		// 		$this->params = $params;
-		// 		return true;
-		// 	}
-		// }
-
-		// $reg_exp = "/^(?P<controller>[a-z-]+)\/(?<action>[a-z-]+)$/";
 		foreach ($this->routes as $route => $params) {
 			if (preg_match($route, $url, $matches)) {
 				foreach ($matches as $key => $match) {
