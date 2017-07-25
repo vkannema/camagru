@@ -10,7 +10,7 @@ try {
 	$dbh = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
 	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$sql = "use `cama_db`;";
-	$sql = $sql . " CREATE TABLE IF NOT EXISTS `user` (
+	$sql .= " CREATE TABLE IF NOT EXISTS `user` (
 		id int(11) NOT NULL,
 		name varchar(50) CHARACTER SET utf8 NOT NULL,
 		email varchar(255) CHARACTER SET utf8 NOT NULL,
