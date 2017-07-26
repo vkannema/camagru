@@ -16,7 +16,11 @@ class Signup extends \Core\Controller
 	{
 		$user = new User($_POST);
 
-		$user->save();
-		View::render('Signup/success.html');
+		if ($user->save()){
+			$this->redirect('/');
+		} else {
+			View::render('Signup/success.html');
+
+		};
 	}
 }

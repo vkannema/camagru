@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use \Core\View;
+use \App\Auth;
 
 class Home extends \Core\Controller
 {
@@ -20,7 +21,9 @@ class Home extends \Core\Controller
 	public function indexAction()
 	{
 		//echo 'Hello from the index action in the Home controller!';
-		View::render('Home/index.php', ['db' => $db]);
+		View::render('Home/index.php', [
+			'user' => Auth::getUser()
+		]);
 
 	}
 }

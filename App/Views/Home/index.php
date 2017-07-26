@@ -6,8 +6,11 @@
 </head>
 <body>
 	<h1>Welcome</h1>
-	<a href="/signup/new">Sign Up GROS</a>
-	<a href="/login">Log in GROS</a>
-
+	<?php if (isset($_SESSION['user'])): ?>
+		Hello <?= $user->name ?> <a href="/logout">Log out</a>
+	<?php else :?>
+		<a href="/signup/new">Sign Up GROS</a>
+		<a href="/login">Log in GROS</a>
+	<?php endif; ?>
 </body>
 </html>

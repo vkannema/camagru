@@ -9,7 +9,7 @@
 	<form action="/login/create" method="post">
 		<div>
 			<label for="inputEmail">Email adress</label>
-			<input type="email" id="inputEmail" name="email" placeholder="Email adress" autofocus />
+			<input type="email" id="inputEmail" name="email" placeholder="Email adress" value="<?php $email ?>"/>
 		</div>
 		<div>
 			<label for="inputPassword">Password</label>
