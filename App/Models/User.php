@@ -45,9 +45,22 @@ class User extends \Core\Model
 		$stmt->execute();
 		return $stmt->fetch();
 	}
-	public static function authenticate($email, $password)
+
+	public static function findByName($name)
 	{
-		$user = static::findByEmail($email);
+		$sql = 'SELECT * FROM users WHERE name = :name';
+
+		$db = static::getDB();
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam(':name', $name, PDO::PARAM_STR);
+		$stmt->setFetchMode(PDO::FETCH_CLASS, get_called_class());
+		$stmt->execute();
+		return $stmt->fetch();
+	}
+
+	public static function authenticate($name, $password)
+	{
+		$user = static::findByName($name);
 		if ($user)
 		{
 			if (password_verify($password, $user->password_hash)){

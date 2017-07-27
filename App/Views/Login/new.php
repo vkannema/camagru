@@ -5,11 +5,12 @@
 	<title>Login</title>
 </head>
 <body>
+	<?php require 'App/Views/Partials/Flash.php'; ?>
 	<h1>Login</h1>
 	<form action="/login/create" method="post">
 		<div>
-			<label for="inputEmail">Email adress</label>
-			<input type="email" id="inputEmail" name="email" placeholder="Email adress" value="<?php $email ?>"/>
+			<label for="inputName">Name</label>
+			<input id="inputName" name="name" placeholder="Name" value="<?= $name ?>" autofocus required/>
 		</div>
 		<div>
 			<label for="inputPassword">Password</label>
