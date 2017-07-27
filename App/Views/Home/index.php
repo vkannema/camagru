@@ -5,6 +5,7 @@
 	<title>Home</title>
 </head>
 <body>
+	<?php require 'App/Views/Partials/Flash.php'; ?>
 	<h1>Welcome</h1>
 	<?php if (isset($_SESSION['user'])): ?>
 		Hello <?= $user->name ?> <a href="/logout">Log out</a>
