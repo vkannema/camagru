@@ -16,6 +16,9 @@
 			<label for="inputPassword">Password</label>
 			<input type="password" id="inputPassword" name="password" placeholder="Password" />
 		</div>
+		<label>
+			<input type="checkbox" name="remember_me" /> Remember me
+		</label>
 		<button type="submit">Log in</button>
 	</form>
 

@@ -11,15 +11,15 @@ class Login extends \Core\Controller
 
 	public function newAction()
 	{
-		View::render('Login/new.php');
+		View::render('Login/new.php', ['name' => '']);
 	}
 
 	public function createAction()
 	{
 		$user = User::authenticate($_POST['name'], $_POST['password']);
-
+		$remember_me = isset($_POST['remember_me']);
 		if ($user) {
-			Auth::login($user);
+			Auth::login($user, $remember_me);
 			Flash::addMessage('Login successful');
 			$this->redirect(Auth::getReturnToPage());
 

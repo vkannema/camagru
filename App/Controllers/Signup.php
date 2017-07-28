@@ -10,7 +10,7 @@ class Signup extends \Core\Controller
 	public function newAction()
 	{
 		//echo 'Hello from the index action in the Home controller!';
-		View::render('Signup/new.html', ['db' => $db]);
+		View::render('Signup/new.html');
 	}
 	public function createAction()
 	{
